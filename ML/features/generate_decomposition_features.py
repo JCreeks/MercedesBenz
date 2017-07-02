@@ -37,6 +37,7 @@ def main():
     n_jobs = -1
 
     # PCA
+    print('PCA')
     n_comp = 50
     pca = PCA(n_components=n_comp, random_state=random_state)
     pca_df = pca.fit_transform(conbined_data)
@@ -44,12 +45,14 @@ def main():
         conbined_data['pca_' + str(i)] = pca_df[:, i]
 
     # IncrementalPCA
+    print('IncrementalPCA')
     n_comp = 70
     ipca_df = IncrementalPCA(n_components=n_comp, batch_size=conbined_data.shape[0]).fit_transform(conbined_data)
     for i in range(0, n_comp):
         conbined_data['ipca_' + str(i)] = ipca_df[:, i]
 
     # KernelPCA
+    print('KernalPCA')
     n_comp = 60
     ipca_df = KernelPCA(n_components=n_comp, kernel='linear', random_state=random_state, n_jobs=n_jobs).fit_transform(conbined_data)
     for i in range(0, n_comp):
