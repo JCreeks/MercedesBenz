@@ -52,11 +52,11 @@ def main():
         conbined_data['ipca_' + str(i)] = ipca_df[:, i]
 
     # KernelPCA
-    print('KernalPCA')
-    n_comp = 10
-    ipca_df = KernelPCA(n_components=n_comp, kernel='linear', random_state=random_state, n_jobs=n_jobs).fit_transform(conbined_data)
-    for i in range(0, n_comp):
-        conbined_data['kernel_pca_' + str(i)] = ipca_df[:, i]
+    #print('KernalPCA')
+    #n_comp = 10
+    #ipca_df = KernelPCA(n_components=n_comp, kernel='linear', random_state=random_state, n_jobs=n_jobs).fit_transform(conbined_data)
+    #for i in range(0, n_comp):
+        #conbined_data['kernel_pca_' + str(i)] = ipca_df[:, i]
 
     conbined_data['ID'] = ids
     train = conbined_data.iloc[:train.shape[0], :]
