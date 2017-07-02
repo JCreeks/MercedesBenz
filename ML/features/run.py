@@ -16,6 +16,9 @@ sys.path.append(module_path)
 cmd = 'rm ../input/*_dataset.pkl'
 os.system(cmd)
 
+# cmd = 'python train_test_preprocess.py'
+# os.system(cmd)
+
 cmd = 'python perform_category_features.py'
 os.system(cmd)
 

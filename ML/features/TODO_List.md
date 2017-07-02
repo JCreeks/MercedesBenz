@@ -1,0 +1,8 @@
+- [x] 记住 y 可能存在异常值 outliers
+- [x] 去除 train 中只存在一种值的特征
+- [ ] 对数据进行聚类处理,cluster id 作为新的特征
+- [ ] try Logistic PCA on binary data. The separation looks much better than for standard PCA.
+- [ ] try Random Projection sklearn.random_projection module
+- [ ] Use Multiple Correspondence Analysis (MCA)
+- [ ] 添加按照类别属性进行 groupby, 对 y 的统计特征
+- [ ] 分析 [R xgboost starter Kerners](https://www.kaggle.com/nigelcarpenter/simple-xgboost-starter)
