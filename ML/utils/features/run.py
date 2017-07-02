@@ -24,6 +24,3 @@ os.system(cmd)
 
 cmd = 'python generate_decomposition_features.py'
 os.system(cmd)
-
-cmd = 'python generate_groupby_features.py'
-os.system(cmd)
