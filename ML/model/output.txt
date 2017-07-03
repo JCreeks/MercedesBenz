@@ -1,0 +1,25 @@
+load datas...
+train: (4209, 520) , test: (4209, 520)
+perform 1 cross-validate: train r2 score = 0.686679521783, validate r2 score = 0.560714562328
+perform 2 cross-validate: train r2 score = 0.663464705178, validate r2 score = 0.567612877016
+perform 3 cross-validate: train r2 score = 0.701036387906, validate r2 score = 0.546266770641
+perform 4 cross-validate: train r2 score = 0.641823890616, validate r2 score = 0.605232939026
+perform 5 cross-validate: train r2 score = 0.693929608428, validate r2 score = 0.484761952291
+
+average train r2 score = 0.677386822782, average validate r2 score = 0.552917820261
+best_num_boost_rounds = 620
+training on total training data...
+predict submit...
+
+load datas...
+train: (4209, 580) , test: (4209, 580)
+perform 1 cross-validate: train r2 score = 0.686718089592, validate r2 score = 0.562183255718
+perform 2 cross-validate: train r2 score = 0.659868303679, validate r2 score = 0.567031545856
+perform 3 cross-validate: train r2 score = 0.692892488252, validate r2 score = 0.546198959123
+perform 4 cross-validate: train r2 score = 0.647517929072, validate r2 score = 0.607500439185
+perform 5 cross-validate: train r2 score = 0.697371479391, validate r2 score = 0.484581627373
+
+average train r2 score = 0.676873657997, average validate r2 score = 0.553499165451
+best_num_boost_rounds = 616
+training on total training data...
+predict submit...
