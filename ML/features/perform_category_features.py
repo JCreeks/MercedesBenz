@@ -23,6 +23,7 @@ from utils import data_util
 def main():
     print 'load datas...'
     train, test = data_util.load_dataset()
+
     train_y = train['y']
     train.drop(['y'], axis=1, inplace=True)
     # 合并训练集和测试集

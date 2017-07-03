@@ -22,4 +22,10 @@ class Configure(object):
     processed_train_path = '../input/train_dataset.pkl'
     processed_test_path = '../input/test_dataset.pkl'
 
+    decomposition_features_train_path = '../input/decomposition_features_train.pkl'
+    decomposition_features_test_path = '../input/decomposition_features_test.pkl'
+
+    groupby_features_train_path = '../input/groupby_features_train.pkl'
+    groupby_features_test_path = '../input/groupby_features_test.pkl'
+
     submission_path = '../result/submission_{}.csv'.format(time.strftime('%Y_%m_%d_%H_%M_%S', time.localtime(time.time())))
