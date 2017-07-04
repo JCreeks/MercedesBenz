@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 from sklearn.linear_model import LassoLarsCV
 from sklearn.model_selection import train_test_split
@@ -18,3 +19,6 @@ exported_pipeline = make_pipeline(
 
 exported_pipeline.fit(training_features, training_target)
 results = exported_pipeline.predict(testing_features)
+
+output = pd.DataFrame({'ID': pd.read_csv('../../input/rest.csv')['ID'], 'y': result})
+output.to_csv('../../result/jul4_3.csv', index=False)
