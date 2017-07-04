@@ -14,7 +14,9 @@ sys.path.append(module_path)
 import xgboost as xgb
 from abc import ABCMeta, abstractmethod
 from sklearn.grid_search import GridSearchCV
-from sklearn.metrics import make_scorer, mean_squared_error
+from sklearn.metrics import make_scorer, mean_squared_error, r2_score
+
+R2 = make_scorer(r2_score, greater_is_better=True)
 
 def RMSLE_(y_val, y_val_pred):
     return np.sqrt(np.mean((np.log(y_val+1)-np.log(y_val_pred+1))**2))
@@ -78,7 +80,7 @@ class XgbWrapper(BaseWrapper):
         return self.score
     
 class GridCVWrapper(BaseWrapper):
-    def __init__(self, clf, seed=0, cv_fold=5, params=None, scoring=RMSE, param_grid = {
+    def __init__(self, clf, seed=0, cv_fold=5, params=None, scoring=R2, param_grid = {
             'alpha': [1e-3,5e-3,1e-2,5e-2,1e-1,0.2,0.3,0.4,0.5,0.8,1e0,3,5,7,1e1],
         }):
         if (not params):
