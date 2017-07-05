@@ -102,7 +102,7 @@ xgb_params2 = {'eta': 0.005, 'max_depth': 4, 'subsample': 0.95, 'objective': 're
 xgb_params3 = {'n_trees': 520, 'learning_rate': 0.0045, 'max_depth': 4, 'subsample': 0.94,  
                'objective': 'reg:linear', 'eval_metric': 'rmse', 'base_score': y_mean, 
                # base prediction = mean(target)             
-               'silent': 1, 'seed':5}
+               'silent': 1}
 
 xgb_params4 = {'learning_rate':.05, 'subsample':.6, 'max_depth':6, 'n_estimators':422, 'colsample_bytree':1, 
                'silent': 1, 'objective': 'reg:linear', 'eval_metric': 'rmse'}
@@ -143,19 +143,19 @@ level_1_models = level_1_models + [SklearnWrapper(make_pipeline( ZeroCount(), La
                                   ]
 
 params_list = [rf_params1, rf_params2, et_params1, et_params2, gb_params1, gb_params2, rd_params, ls_params, 
-               #eln_params, 
+               eln_params, 
                lcv_params
                ]
    
 
 func_list = [RandomForestRegressor, RandomForestRegressor, ExtraTreesRegressor, ExtraTreesRegressor, 
-             GradientBoostingRegressor, GradientBoostingRegressor, Ridge, Lasso, #ElasticNet, 
+             GradientBoostingRegressor, GradientBoostingRegressor, Ridge, Lasso, ElasticNet, 
              LassoCV
             ]
 level_1_models = level_1_models + \
     list(map(lambda x: SklearnWrapper(clf=x[1], seed=SEED, params=x[0]), zip(params_list, func_list)))
 
-#level_1_models = level_1_models [12:]
+level_1_models = level_1_models [16:]
 et_params = {
     'n_jobs': 16,
     'n_estimators': 100,
