@@ -32,7 +32,7 @@ X_train, X_val, y_train, y_val = train_test_split(train, y_train_all, test_size=
 pipeline_optimizer = TPOTRegressor(generations=5, population_size=100,
                                    offspring_size=None,
                                    scoring='r2', cv=5,
-                                   subsample=0.95, n_jobs=1,
+                                   subsample=0.95, n_jobs=-1,
                                    random_state=random_state,
                                    verbosity=2)
 

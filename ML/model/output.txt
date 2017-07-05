@@ -38,3 +38,7 @@ train: (4209, 580) , test: (4209, 580)
 
 Best pipeline: LassoLarsCV(ZeroCount(input_matrix), LassoLarsCV__normalize=True)
 0.609085312471
+/home/ubuntu/anaconda2/lib/python2.7/site-packages/sklearn/cross_validation.py:44: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  "This module will be removed in 0.20.", DeprecationWarning)
+Optimization Progress:   0%|          | 0/600 [00:00<?, ?pipeline/s]load datas...
+train: (4209, 596) , test: (4209, 596)
