@@ -65,17 +65,17 @@ id_test = test['ID']
 del test['ID']
 
 #############################
-#nTest = 500
-#train = train[:nTest]
-#y_train = y_train[:nTest]
+nTest = 500
+train = train[:nTest]
+y_train = y_train[:nTest]
 
 #############################
 
 test_size = (1.0 * test.shape[0]) / train.shape[0]
 print "submit test size:", test_size
 
-train = np.array(train)
-test = np.array(test)
+train = np.ndarray(train)
+test = np.ndarray(test)
 
 rf_params1 = {'max_depth':16, 'n_estimators':250, 'min_samples_leaf':20, 'min_samples_split':60,
               'max_features':.4, 'random_state':5, 'n_jobs':-1}
@@ -142,11 +142,15 @@ level_1_models = level_1_models + [SklearnWrapper(make_pipeline( ZeroCount(), La
                  min_samples_split=14, subsample=0.7)), LassoLarsCV()))
                                   ]
 
-params_list = [rf_params1, rf_params2, et_params1, et_params2, gb_params1, gb_params2, rd_params, ls_params, eln_params, lcv_params
+params_list = [rf_params1, rf_params2, et_params1, et_params2, gb_params1, gb_params2, rd_params, ls_params, 
+               #eln_params, 
+               lcv_params
                ]
    
 
-func_list = [RandomForestRegressor, RandomForestRegressor, ExtraTreesRegressor, ExtraTreesRegressor, GradientBoostingRegressor, GradientBoostingRegressor, Ridge, Lasso, ElasticNet, LassoCV
+func_list = [RandomForestRegressor, RandomForestRegressor, ExtraTreesRegressor, ExtraTreesRegressor, 
+             GradientBoostingRegressor, GradientBoostingRegressor, Ridge, Lasso, #ElasticNet, 
+             LassoCV
             ]
 level_1_models = level_1_models + \
     list(map(lambda x: SklearnWrapper(clf=x[1], seed=SEED, params=x[0]), zip(params_list, func_list)))
