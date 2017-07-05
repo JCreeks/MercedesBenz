@@ -35,7 +35,7 @@ def main():
     conbined_data = pd.concat([train, test])
     ids = conbined_data['ID']
 
-    perform_clusters = [4, 5, 6, 7, 8, 9, 10]
+    perform_clusters = [7]
     for n_clusters in perform_clusters:
         print '>>>> perform kmeans cluser, n_clusters = {}...'.format(n_clusters)
         feature_train_path = Configure.kmeans_feature_distance_train_path.format(n_clusters)

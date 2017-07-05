@@ -1,8 +1,9 @@
 - [x] 记住 y 可能存在异常值 outliers
 - [x] 去除 train 中只存在一种值的特征
-- [ ] 对数据进行聚类处理,cluster id 作为新的特征
+- [x] 对数据进行聚类处理,cluster id 作为新的特征
 - [ ] try Logistic PCA on binary data. The separation looks much better than for standard PCA.
 - [ ] Use Multiple Correspondence Analysis (MCA)
 - [x] 添加按照类别属性进行 groupby, 对 y 的统计特征
 - [ ] 分析 [R xgboost starter Kerners](https://www.kaggle.com/nigelcarpenter/simple-xgboost-starter)
 - [ ] 有些类别的属性值只包含几个记录或者训练集中有测试集中国没有,需要考虑删除,防止过拟合
+- [ ] 按照 cluster_{}_cluster_label 进行 groupby 统计
