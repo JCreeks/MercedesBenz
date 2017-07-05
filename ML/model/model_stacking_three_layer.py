@@ -74,8 +74,8 @@ y_train = y_train[:nTest]
 test_size = (1.0 * test.shape[0]) / train.shape[0]
 print "submit test size:", test_size
 
-train = np.ndarray(train)
-test = np.ndarray(test)
+train = np.array(train)
+test = np.array(test)
 
 rf_params1 = {'max_depth':16, 'n_estimators':250, 'min_samples_leaf':20, 'min_samples_split':60,
               'max_features':.4, 'random_state':5, 'n_jobs':-1}
