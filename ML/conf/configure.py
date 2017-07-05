@@ -28,4 +28,7 @@ class Configure(object):
     groupby_features_train_path = '../input/groupby_features_train.pkl'
     groupby_features_test_path = '../input/groupby_features_test.pkl'
 
+    kmeans_feature_distance_train_path = '../input/kmeans_cluster_{}_feature_distance_train.pkl'
+    kmeans_feature_distance_test_path = '../input/kmeans_cluster_{}_feature_distance_test.pkl'
+
     submission_path = '../result/submission_{}.csv'.format(time.strftime('%Y_%m_%d_%H_%M_%S', time.localtime(time.time())))

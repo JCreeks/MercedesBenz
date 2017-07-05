@@ -27,8 +27,8 @@ def main():
     train.drop(removed_features, axis=1, inplace=True)
     test.drop(removed_features, axis=1, inplace=True)
 
-    # 去除 train 中的 outlier 数据
-    train = train[train.y < 200]
+    # # 去除 train 中的 outlier 数据
+    # train = train[train.y < 250]
     print 'train:', train.shape, ', test:', test.shape
     print("Save data...")
     data_util.save_dataset(train, test)

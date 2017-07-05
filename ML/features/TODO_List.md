@@ -5,3 +5,4 @@
 - [ ] Use Multiple Correspondence Analysis (MCA)
 - [x] 添加按照类别属性进行 groupby, 对 y 的统计特征
 - [ ] 分析 [R xgboost starter Kerners](https://www.kaggle.com/nigelcarpenter/simple-xgboost-starter)
+- [ ] 有些类别的属性值只包含几个记录或者训练集中有测试集中国没有,需要考虑删除,防止过拟合
