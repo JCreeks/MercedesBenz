@@ -156,7 +156,7 @@ func_list = [RandomForestRegressor, RandomForestRegressor, ExtraTreesRegressor, 
 level_1_models = level_1_models + \
     list(map(lambda x: SklearnWrapper(clf=x[1], seed=SEED, params=x[0]), zip(params_list, func_list)))
 
-level_1_models = level_1_models [16:]
+#level_1_models = level_1_models [16:]
 et_params = {
     'n_jobs': 16,
     'n_estimators': 100,
