@@ -65,9 +65,9 @@ id_test = test['ID']
 del test['ID']
 
 #############################
-#nTest = 500
-#train = train[:nTest]
-#y_train = y_train[:nTest]
+nTest = 500
+train = train[:nTest]
+y_train = y_train[:nTest]
 
 #############################
 
@@ -135,11 +135,11 @@ level_1_models = level_1_models + [SklearnWrapper(clf=KNeighborsRegressor,  para
                  SklearnWrapper(clf=KNeighborsRegressor,  params=knr_params3),
                  SklearnWrapper(clf=KNeighborsRegressor,  params=knr_params4)]
 
-level_1_models = level_1_models + [make_pipeline( ZeroCount(), LassoLarsCV(normalize=True)),
-                 make_pipeline(StackingEstimator(estimator=LassoLarsCV(normalize=True)),
+level_1_models = level_1_models + [SklearnWrapper(make_pipeline( ZeroCount(), LassoLarsCV(normalize=True))),
+                 SklearnWrapper(make_pipeline(StackingEstimator(estimator=LassoLarsCV(normalize=True)),
                  StackingEstimator(estimator=GradientBoostingRegressor(learning_rate=0.001,
                  loss="huber", max_depth=3, max_features=0.55, min_samples_leaf=18,
-                 min_samples_split=14, subsample=0.7)),
+                 min_samples_split=14, subsample=0.7))),
                  LassoLarsCV())
                                   ]
 
