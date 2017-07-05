@@ -43,7 +43,8 @@ class SklearnWrapper(BaseWrapper):
     def __init__(self, clf, seed=None, params={}):
         if (seed):
             params['random_state'] = seed
-        self.clf = clf(**params)
+        if (len(params)):
+            self.clf = clf(**params)
 
     def train(self, x, y):
         self.clf.fit(x, y)
