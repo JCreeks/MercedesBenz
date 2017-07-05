@@ -139,7 +139,7 @@ level_1_models = level_1_models + [SklearnWrapper(make_pipeline( ZeroCount(), La
                  SklearnWrapper(make_pipeline(StackingEstimator(estimator=LassoLarsCV(normalize=True)),
                  StackingEstimator(estimator=GradientBoostingRegressor(learning_rate=0.001,
                  loss="huber", max_depth=3, max_features=0.55, min_samples_leaf=18,
-                 min_samples_split=14, subsample=0.7))), LassoLarsCV())
+                 min_samples_split=14, subsample=0.7)), LassoLarsCV()))
                                   ]
 
 params_list = [rf_params1, rf_params2, et_params1, et_params2, gb_params1, gb_params2, rd_params, ls_params, eln_params, lcv_params
