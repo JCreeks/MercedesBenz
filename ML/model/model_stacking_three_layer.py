@@ -65,9 +65,9 @@ id_test = test['ID']
 del test['ID']
 
 #############################
-nTest = 500
-train = train[:nTest]
-y_train = y_train[:nTest]
+#nTest = 500
+#train = train[:nTest]
+#y_train = y_train[:nTest]
 
 #############################
 
