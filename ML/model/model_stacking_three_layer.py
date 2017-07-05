@@ -143,13 +143,14 @@ level_1_models = level_1_models + [SklearnWrapper(make_pipeline( ZeroCount(), La
                                   ]
 
 params_list = [rf_params1, rf_params2, et_params1, et_params2, gb_params1, gb_params2, rd_params, ls_params, 
-               eln_params, 
+               #eln_params, 
                lcv_params
                ]
    
 
 func_list = [RandomForestRegressor, RandomForestRegressor, ExtraTreesRegressor, ExtraTreesRegressor, 
-             GradientBoostingRegressor, GradientBoostingRegressor, Ridge, Lasso, ElasticNet, 
+             GradientBoostingRegressor, GradientBoostingRegressor, Ridge, Lasso, 
+             #ElasticNet, 
              LassoCV
             ]
 level_1_models = level_1_models + \
@@ -187,7 +188,7 @@ rd_params = {
 }
 
 ls_params = {
-    'alpha': 100#0.005
+    'alpha': .1#0.005
 }
 
 xg = XgbWrapper(seed=SEED, params=xgb_params)
