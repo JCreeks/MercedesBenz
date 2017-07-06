@@ -66,7 +66,7 @@ class XgbWrapper(BaseWrapper):
         dtrain = xgb.DMatrix(x, label=y)
         self.gbdt = xgb.train(self.param, dtrain, self.nrounds)
 
-    def cv_train(self, x, y, num_boost_round=1000, nfold=4, early_stopping_rounds=40):
+    def cv_train(self, x, y, num_boost_round=1000, nfold=5, early_stopping_rounds=40):
         dtrain = xgb.DMatrix(x, label=y)
         res = xgb.cv(self.param, dtrain, num_boost_round=num_boost_round, nfold=nfold,
                      early_stopping_rounds=early_stopping_rounds, verbose_eval=10, show_stdv=True)
