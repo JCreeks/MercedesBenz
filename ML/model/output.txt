@@ -42,3 +42,4 @@ Best pipeline: LassoLarsCV(ZeroCount(input_matrix), LassoLarsCV__normalize=True)
   "This module will be removed in 0.20.", DeprecationWarning)
 Optimization Progress:   0%|          | 0/600 [00:00<?, ?pipeline/s]load datas...
 train: (4209, 596) , test: (4209, 596)
+Optimization Progress:   0%|          | 1/600 [11:10:14<6691:11:24, 40214.16s/pipeline]Optimization Progress:   3%|2         | 17/600 [11:14:54<4559:34:29, 28155.18s/pipeline]Optimization Progress:   6%|5         | 33/600 [11:16:51<3104:27:14, 19710.82s/pipeline]Optimization Progress:   8%|8         | 49/600 [11:21:52<2112:39:25, 13803.20s/pipeline]Optimization Progress:  11%|#         | 65/600 [11:30:17<1437:19:24, 9671.71s/pipeline] 
