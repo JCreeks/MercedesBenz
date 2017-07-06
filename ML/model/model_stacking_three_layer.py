@@ -87,7 +87,7 @@ et_params1 = {'max_depth':13, 'n_estimators':200, 'min_samples_leaf':10,
 
 et_params2 = {'min_samples_leaf':2, 'max_depth':12, 'n_jobs':-1, 'n_estimators':100, 'max_features':.5}
 
-gb_params1 = {'learning_rate':0.1, 'n_estimators':50, 'min_samples_leaf':60,                                           'min_samples_split':20, 'subsample':0.8, 'max_features':.4,    
+gb_params1 = {'learning_rate':0.05, 'n_estimators':50, 'min_samples_leaf':60,                                           'min_samples_split':20, 'subsample':0.8, 'max_features':.4,    
               'max_depth':5}
 
 gb_params2 = {'learning_rate':0.001, 'loss':"huber", 'max_depth':3, 'max_features':0.55, 
@@ -96,16 +96,18 @@ gb_params2 = {'learning_rate':0.001, 'loss':"huber", 'max_depth':3, 'max_feature
 xgb_params1 = {'n_trees': 520, 'eta': 0.0045, 'max_depth': 4, 'subsample': 0.93, 
                'objective': 'reg:linear', 'eval_metric': 'rmse', 'silent': 1, 'base_score': y_mean}
 
-xgb_params2 = {'eta': 0.005, 'max_depth': 4, 'subsample': 0.95, 'objective': 'reg:linear',
-               'eval_metric': 'rmse', 'silent': 1, 'base_score': y_mean}
+xgb_params2 = {'eta': 0.005, 'max_depth': 2, 'subsample': 0.95, 'objective': 'reg:linear',
+               'min_child_weight':6, 'colsample_bytree': 0.55, 'n_trees': 950,
+               'eval_metric': 'rmse', 'silent': 1, 'base_score': y_mean}#average validate r2 score = 0.561513621097
 
 xgb_params3 = {'n_trees': 520, 'learning_rate': 0.0045, 'max_depth': 4, 'subsample': 0.94,  
                'objective': 'reg:linear', 'eval_metric': 'rmse', 'base_score': y_mean, 
                # base prediction = mean(target)             
                'silent': 1}
 
-xgb_params4 = {'learning_rate':.05, 'subsample':.6, 'max_depth':6, 'n_estimators':422, 'colsample_bytree':1, 
-               'silent': 1, 'objective': 'reg:linear', 'eval_metric': 'rmse'}
+xgb_params4 = {'learning_rate':.01, 'subsample':.9, 'max_depth':2, 'n_estimators':600, 'colsample_bytree':.75, 
+               'reg_alpha': 50, 'min_child_weight':4, 
+               'silent': 1, 'objective': 'reg:linear', 'eval_metric': 'rmse'}#average validate r2 score = 0.574393635257
 
 lcv_params = {'alphas' : [1, 0.1, 0.001, 0.0005]}#[.1, 1, 10, 100, 1000]}#
 
@@ -127,7 +129,7 @@ SEED = 0
 
 level_1_models = [XgbWrapper(seed=SEED, params=xgb_params1), XgbWrapper(seed=SEED, params=xgb_params2),
                  #XgbWrapper(seed=SEED, params=xgb_params3),
-                 #XgbWrapper(seed=SEED, params=xgb_params4) 
+                 XgbWrapper(seed=SEED, params=xgb_params4) 
                  ]
                 
 level_1_models = level_1_models + [SklearnWrapper(clf=KNeighborsRegressor,  params=knr_params1),
