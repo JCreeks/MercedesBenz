@@ -136,10 +136,10 @@ level_1_models = [XgbWrapper(seed=SEED, params=xgb_params1), XgbWrapper(seed=SEE
                  XgbWrapper(seed=SEED, params=xgb_params4) 
                  ]
                 
-# level_1_models = level_1_models + [SklearnWrapper(clf=KNeighborsRegressor,  params=knr_params1),
-#                  SklearnWrapper(clf=KNeighborsRegressor,  params=knr_params2),
-#                  SklearnWrapper(clf=KNeighborsRegressor,  params=knr_params3),
-#                  SklearnWrapper(clf=KNeighborsRegressor,  params=knr_params4)]
+level_1_models = level_1_models + [SklearnWrapper(clf=KNeighborsRegressor,  params=knr_params1),
+                 SklearnWrapper(clf=KNeighborsRegressor,  params=knr_params2),
+                 SklearnWrapper(clf=KNeighborsRegressor,  params=knr_params3),
+                 SklearnWrapper(clf=KNeighborsRegressor,  params=knr_params4)]
 
 level_1_models = level_1_models + [SklearnWrapper(make_pipeline( ZeroCount(), LassoLarsCV(normalize=True))),#LB 0.55797
                  SklearnWrapper(make_pipeline(StackingEstimator(estimator=LassoLarsCV(normalize=True)),
