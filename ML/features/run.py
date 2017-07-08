@@ -28,11 +28,17 @@ os.system(cmd)
 cmd = 'python generate_decomposition_features.py'
 os.system(cmd)
 
-cmd = 'python generate_groupby_features.py'
-os.system(cmd)
-
 cmd = 'python perform_feature_discretize.py'
 os.system(cmd)
 
 cmd = 'python generate_feature_distance.py'
+os.system(cmd)
+
+# cmd = 'python generate_tsne_features.py'
+# os.system(cmd)
+
+cmd = 'python generate_groupby_features.py'
+os.system(cmd)
+
+cmd = 'python perform_other_features.py'
 os.system(cmd)

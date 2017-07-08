@@ -31,10 +31,11 @@ def main():
             (not os.path.exists(Configure.groupby_features_test_path)):
         groupby_features = []
         for c in train.columns:
-            if 'label_encoder' in c:
+            if ('label_encoder' in c) or ('tsne_cluster' in c):
                 groupby_features.append(c)
 
         for c in groupby_features:
+            print '>>>> perform groupby features, feature : {}...'.format(c)
             groupby_df = train[[c, 'y']].groupby(c).aggregate('mean')['y'].reset_index()
 
             def label_encoder_mean_map(data):
@@ -69,10 +70,10 @@ def main():
             groupby_features_train[c + '_std_y'] = train[c].map(label_encoder_std_map)
             groupby_features_test[c + '_std_y'] = test[c].map(label_encoder_std_map)
 
-            with open(Configure.groupby_features_train_path, "wb") as f:
-                cPickle.dump(groupby_features_train, f, -1)
-            with open(Configure.groupby_features_test_path, "wb") as f:
-                cPickle.dump(groupby_features_test, f, -1)
+        with open(Configure.groupby_features_train_path, "wb") as f:
+            cPickle.dump(groupby_features_train, f, -1)
+        with open(Configure.groupby_features_test_path, "wb") as f:
+            cPickle.dump(groupby_features_test, f, -1)
     else:
         with open(Configure.groupby_features_train_path, "rb") as f:
             groupby_features_train = cPickle.load(f)
