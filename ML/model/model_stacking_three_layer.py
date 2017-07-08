@@ -91,8 +91,8 @@ et_params2 = {'min_samples_leaf':2, 'max_depth':12, 'n_jobs':-1, 'n_estimators':
 gb_params1 = {'learning_rate':0.05, 'n_estimators':50, 'min_samples_leaf':60, 'min_samples_split':20, 'subsample':0.8, 'max_features':.4,    
               'max_depth':5}#LB: 0.55387
 
-gb_params2 = {'learning_rate':0.001, 'loss':"huber", 'max_depth':3, 'max_features':0.55, 
-              'min_samples_leaf':18, 'min_samples_split':14, 'subsample':0.7}
+# gb_params2 = {'learning_rate':0.001, 'loss':"huber", 'max_depth':3, 'max_features':0.55, 
+#               'min_samples_leaf':18, 'min_samples_split':14, 'subsample':0.7}
 
 xgb_params1 = {'n_trees': 520, 'eta': 0.0045, 'max_depth': 4, 'subsample': 0.93, 
                'objective': 'reg:linear', 'eval_metric': 'rmse', 'silent': 1, 'base_score': y_mean}
@@ -133,13 +133,13 @@ SEED = 0
 
 level_1_models = [XgbWrapper(seed=SEED, params=xgb_params1), XgbWrapper(seed=SEED, params=xgb_params2),
                  #XgbWrapper(seed=SEED, params=xgb_params3),
-                 XgbWrapper(seed=SEED, params=xgb_params4) 
+                 #XgbWrapper(seed=SEED, params=xgb_params4) 
                  ]
                 
-level_1_models = level_1_models + [SklearnWrapper(clf=KNeighborsRegressor,  params=knr_params1),
-                 SklearnWrapper(clf=KNeighborsRegressor,  params=knr_params2),
-                 SklearnWrapper(clf=KNeighborsRegressor,  params=knr_params3),
-                 SklearnWrapper(clf=KNeighborsRegressor,  params=knr_params4)]
+# level_1_models = level_1_models + [SklearnWrapper(clf=KNeighborsRegressor,  params=knr_params1),
+#                  SklearnWrapper(clf=KNeighborsRegressor,  params=knr_params2),
+#                  SklearnWrapper(clf=KNeighborsRegressor,  params=knr_params3),
+#                  SklearnWrapper(clf=KNeighborsRegressor,  params=knr_params4)]
 
 level_1_models = level_1_models + [SklearnWrapper(make_pipeline( ZeroCount(), LassoLarsCV(normalize=True))),#LB 0.55797
                  SklearnWrapper(make_pipeline(StackingEstimator(estimator=LassoLarsCV(normalize=True)),
