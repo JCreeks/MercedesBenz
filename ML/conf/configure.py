@@ -31,4 +31,8 @@ class Configure(object):
     kmeans_feature_distance_train_path = '../input/kmeans_cluster_{}_feature_distance_train.pkl'
     kmeans_feature_distance_test_path = '../input/kmeans_cluster_{}_feature_distance_test.pkl'
 
+    tsne_transformed_data_path = '../input/tsne_transformed_data.pkl'
+    tsne_feature_train_path = '../input/tsne_cluster_{}_feature_train.pkl'
+    tsne_feature_test_path = '../input/tsne_cluster_{}_feature_test.pkl'
+
     submission_path = '../result/submission_{}.csv'.format(time.strftime('%Y_%m_%d_%H_%M_%S', time.localtime(time.time())))

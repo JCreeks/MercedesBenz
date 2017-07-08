@@ -49,8 +49,7 @@ def main():
     dtest = xgb.DMatrix(X_test, feature_names=df_columns)
 
     xgb_params = {
-        'n_trees': 520,
-        'eta': 0.0045,
+        'eta': 0.005,
         'max_depth': 4,
         'subsample': 0.93,
         'objective': 'reg:linear',
