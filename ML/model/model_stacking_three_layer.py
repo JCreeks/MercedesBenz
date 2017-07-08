@@ -101,10 +101,8 @@ xgb_params2 = {'eta': 0.005, 'max_depth': 2, 'subsample': 0.95, 'objective': 're
                'min_child_weight':6, 'colsample_bytree': 0.55, 'n_trees': 950,
                'eval_metric': 'rmse', 'silent': 1, 'base_score': y_mean}#average validate r2 score = 0.561513621097
 
-xgb_params3 = {'n_trees': 520, 'learning_rate': 0.0045, 'max_depth': 4, 'subsample': 0.94,  
-               'objective': 'reg:linear', 'eval_metric': 'rmse', 'base_score': y_mean, 
-               # base prediction = mean(target)             
-               'silent': 1}
+xgb_params3 = {'n_trees': 672, 'eta': 0.005, 'max_depth': 4, 'subsample': 0.93, 'objective': 'reg:linear', 
+               'eval_metric': 'rmse', 'silent': 1 }
 
 xgb_params4 = {'learning_rate':.01, 'subsample':.9, 'max_depth':2, 'n_estimators':600, 'colsample_bytree':.75, 
                'reg_alpha': 50, 'min_child_weight':4, 
@@ -131,9 +129,9 @@ knr_params4 = {'n_neighbors' : 25}
 
 SEED = 0
 
-level_1_models = [XgbWrapper(seed=SEED, params=xgb_params1), XgbWrapper(seed=SEED, params=xgb_params2),
-                 #XgbWrapper(seed=SEED, params=xgb_params3),
-                 #XgbWrapper(seed=SEED, params=xgb_params4) 
+level_1_models = [#XgbWrapper(seed=SEED, params=xgb_params1), XgbWrapper(seed=SEED, params=xgb_params2),
+                 XgbWrapper(seed=SEED, params=xgb_params3),
+                 XgbWrapper(seed=SEED, params=xgb_params4) 
                  ]
                 
 # level_1_models = level_1_models + [SklearnWrapper(clf=KNeighborsRegressor,  params=knr_params1),
