@@ -211,7 +211,7 @@ ls = SklearnWrapper(clf=Lasso, seed=SEED, params=ls_params)
 #level_2_models = [SklearnWrapper(clf=ExtraTreesRegressor,seed=SEED,params={}),
 #                 XgbWrapper(seed=SEED, params=xgb_params1)]
 level_2_models = [xg, et, rf, rd, ls,
-                #XgbWrapper(seed=SEED, params=xgb_params3)
+                #XgbWrapper(seed=SEED, params=xgb_params3，cv_fold=4)
                  ]
 
 # level_2_models = level_2_models + [SklearnWrapper(make_pipeline( ZeroCount(), LassoLarsCV(normalize=True))),
@@ -238,7 +238,7 @@ stacking_model = XgbWrapper(seed=SEED, params=xgb_params, cv_fold=5)
 #model_stack = TwoLevelModelStacking(train, y_train, test, level_2_models, stacking_model=stacking_model, stacking_with_pre_features=False, n_folds=5, random_seed=0, )
 
 model_stack = ThreeLevelModelStacking(train, y_train, test, level_1_models, level_2_models, 
-stacking_model=stacking_model, stacking_with_pre_features=False, n_folds=5, random_seed=0)
+stacking_model=stacking_model, stacking_with_pre_features=False, n_folds=10, random_seed=0)
 
 predicts, score= model_stack.run_stack_predict()
 
