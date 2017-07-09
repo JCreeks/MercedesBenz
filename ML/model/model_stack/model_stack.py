@@ -183,7 +183,7 @@ class ThreeLevelModelStacking(object):
         predicts = self.stacking_model.predict(x_test)
         score = self.stacking_model.getScore()
         
-        print("score={}".formet(score))
+        print("score={}".format(score))
         score = 1 - score**2/self.y_train.var()
         
         #pd.DataFrame(train_to_save).to_csv("1stLayerX_train_{}.csv".format(score))
