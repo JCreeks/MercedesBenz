@@ -169,11 +169,11 @@ class ThreeLevelModelStacking(object):
                 x_train = oof_train
                 x_test = oof_test
             
-        # run level-3 stacking
+        # run lesvel-3 stacking
         #xgbWrapper only
-        best_nrounds, cv_mean, cv_std = self.stacking_model.cv_train(x_train, self.y_train)
-        self.stacking_model.nrounds = best_nrounds
-        print('Ensemble-CV: {0}+{1}'.format(cv_mean, cv_std))
+        # best_nrounds, cv_mean, cv_std = self.stacking_model.cv_train(x_train, self.y_train)
+        # self.stacking_model.nrounds = best_nrounds
+        # print('Ensemble-CV: {0}+{1}'.format(cv_mean, cv_std))
         #xgbWrapper only
         
         self.stacking_model.train(x_train, self.y_train)
@@ -182,6 +182,8 @@ class ThreeLevelModelStacking(object):
         # stacking predict
         predicts = self.stacking_model.predict(x_test)
         score = self.stacking_model.getScore()
+
+        score = 1 - score**2/y_train.var()
         
         #pd.DataFrame(train_to_save).to_csv("1stLayerX_train_{}.csv".format(score))
         #pd.DataFrame(test_to_save).to_csv("1stLayerX_test_{}.csv".format(score))

@@ -63,6 +63,9 @@ class XgbWrapper(BaseWrapper):
         self.score = 0
 
     def train(self, x, y):
+        best_nrounds, cv_mean, cv_std = self.cv_train(x, y)
+        self.nrounds = best_nrounds
+        #print('Ensemble-CV: {0}+{1}'.format(cv_mean, cv_std))
         dtrain = xgb.DMatrix(x, label=y)
         self.gbdt = xgb.train(self.param, dtrain, self.nrounds)
 
