@@ -211,7 +211,7 @@ ls = SklearnWrapper(clf=Lasso, seed=SEED, params=ls_params)
 #level_2_models = [SklearnWrapper(clf=ExtraTreesRegressor,seed=SEED,params={}),
 #                 XgbWrapper(seed=SEED, params=xgb_params1)]
 level_2_models = [xg, et, rf, rd, ls,
-                  XgbWrapper(seed=SEED, params=xgb_params3，cv_fold=4)
+                  XgbWrapper(seed=SEED, params=xgb_params3, cv_fold=4)
                  ]
 
 # level_2_models = level_2_models + [SklearnWrapper(make_pipeline( ZeroCount(), LassoLarsCV(normalize=True))),
