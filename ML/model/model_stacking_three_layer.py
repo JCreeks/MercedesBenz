@@ -129,9 +129,9 @@ knr_params4 = {'n_neighbors' : 25}
 
 SEED = 0
 
-level_1_models = [#XgbWrapper(seed=SEED, params=xgb_params1), XgbWrapper(seed=SEED, params=xgb_params2),
-                 XgbWrapper(seed=SEED, params=xgb_params3),
-                 XgbWrapper(seed=SEED, params=xgb_params4) 
+level_1_models = [XgbWrapper(seed=SEED, params=xgb_params1), XgbWrapper(seed=SEED, params=xgb_params2),
+                 #XgbWrapper(seed=SEED, params=xgb_params3),
+                 #XgbWrapper(seed=SEED, params=xgb_params4) 
                  ]
                 
 # level_1_models = level_1_models + [SklearnWrapper(clf=KNeighborsRegressor,  params=knr_params1),
