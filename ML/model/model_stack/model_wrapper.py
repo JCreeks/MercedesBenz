@@ -7,6 +7,7 @@
 """
 import os
 import sys
+import numpy as np
 
 module_path = os.path.abspath(os.path.join('..'))
 sys.path.append(module_path)
@@ -79,6 +80,8 @@ class XgbWrapper(BaseWrapper):
         cv_mean = res.iloc[-1, 0]
         cv_std = res.iloc[-1, 1]
         self.score = cv_mean
+        #print("score={}".format(self.score ))
+        self.score = 1 - self.score**2/np.var(y)
         return best_nrounds, cv_mean, cv_std
 
     def predict(self, x):
