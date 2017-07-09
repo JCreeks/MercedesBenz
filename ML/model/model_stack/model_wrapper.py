@@ -101,7 +101,7 @@ class GridCVWrapper(BaseWrapper):
 
     def train(self, x, y):
         self.grid.fit(x, y)
-        self.score = -self.grid.best_score_
+        self.score = self.grid.best_score_
 
     def predict(self, x):
         return self.grid.predict(x)
