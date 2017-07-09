@@ -135,3 +135,102 @@ submit test size: 1.0
 [150]	train-rmse:6.20223+0.0561413	test-rmse:8.27825+0.794629
 Ensemble-CV: 8.2552298+0.800752035561
 stackingCV: 8.2552298
+/home/ubuntu/anaconda2/lib/python2.7/site-packages/sklearn/cross_validation.py:44: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  "This module will be removed in 0.20.", DeprecationWarning)
+/home/ubuntu/anaconda2/lib/python2.7/site-packages/sklearn/grid_search.py:43: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. This module will be removed in 0.20.
+  DeprecationWarning)
+  File "model_stacking_three_layer.py", line 234
+    stacking_model = XgbWrapper(seed=SEED, params=xgb_params, , cv_fold=5)
+                                                              ^
+SyntaxError: invalid syntax
+/home/ubuntu/anaconda2/lib/python2.7/site-packages/sklearn/cross_validation.py:44: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  "This module will be removed in 0.20.", DeprecationWarning)
+/home/ubuntu/anaconda2/lib/python2.7/site-packages/sklearn/grid_search.py:43: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. This module will be removed in 0.20.
+  DeprecationWarning)
+load datas...
+submit test size: 1.0
+<model_stack.model_wrapper.XgbWrapper object at 0x7f68e5315750>-1stCV: 0.557349874142
+<model_stack.model_wrapper.XgbWrapper object at 0x7f68e52fa1d0>-1stCV: 0.571168759147
+<model_stack.model_wrapper.XgbWrapper object at 0x7f68de7c9b50>-1stCV: 0.570778845664
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f68de7c9ed0>-1stCV: 0.582901769014
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f68de7c9d10>-1stCV: 0.58011920329
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f68de7c9cd0>-1stCV: 0.561866938078
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f68de7c9c10>-1stCV: 0.551362084566
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f68de7c9a90>-1stCV: 0.561015289849
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f68de7c99d0>-1stCV: 0.551186609989
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f68de7c9910>-1stCV: 0.560534238501
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f68de7c9890>-1stCV: 0.544812883004
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f68de7c9810>-1stCV: 0.567676560302
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f68de7c9790>-1stCV: 0.583631369436
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f68de7c9710>-1stCV: 0.569499462189
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f68de7c9690>-1stCV: 0.58343120553
+<model_stack.model_wrapper.XgbWrapper object at 0x7f68de7c9d50>-2ndCV: 0.573316820282
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f68de7c9610>-2ndCV: 0.578266021297
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f68de7c9550>-2ndCV: 0.57468824991
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f68de7c9490>-2ndCV: 0.579662334985
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f68de7712d0>-2ndCV: 0.58243434937
+Traceback (most recent call last):
+  File "model_stacking_three_layer.py", line 243, in <module>
+    predicts, score= model_stack.run_stack_predict()
+  File "/home/ubuntu/nbs/MercedesBenz/ML/model/model_stack/model_stack.py", line 186, in run_stack_predict
+    score = 1 - score**2/y_train.var()
+NameError: global name 'y_train' is not defined
+/home/ubuntu/anaconda2/lib/python2.7/site-packages/sklearn/cross_validation.py:44: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  "This module will be removed in 0.20.", DeprecationWarning)
+/home/ubuntu/anaconda2/lib/python2.7/site-packages/sklearn/grid_search.py:43: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. This module will be removed in 0.20.
+  DeprecationWarning)
+load datas...
+submit test size: 1.0
+<model_stack.model_wrapper.XgbWrapper object at 0x7f2466dce590>-1stCV: 0.557349874142
+<model_stack.model_wrapper.XgbWrapper object at 0x7f2466daafd0>-1stCV: 0.571168759147
+<model_stack.model_wrapper.XgbWrapper object at 0x7f2460281990>-1stCV: 0.570778845664
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f2460281d90>-1stCV: 0.582901769014
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f2460281bd0>-1stCV: 0.58011920329
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f2460281b90>-1stCV: 0.561866938078
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f2460281ad0>-1stCV: 0.551362084566
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f2460281a10>-1stCV: 0.561015289849
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f2460281910>-1stCV: 0.551186609989
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f24602817d0>-1stCV: 0.560534238501
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f2460281750>-1stCV: 0.544812883004
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f24602816d0>-1stCV: 0.567676560302
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f2460281650>-1stCV: 0.583631369436
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f24602815d0>-1stCV: 0.569499462189
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f2460281550>-1stCV: 0.58343120553
+<model_stack.model_wrapper.XgbWrapper object at 0x7f2460281c10>-2ndCV: 0.573316820282
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f24602814d0>-2ndCV: 0.578266021297
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f2460281410>-2ndCV: 0.57468824991
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f2460281350>-2ndCV: 0.579662334985
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f24602812d0>-2ndCV: 0.58243434937
+stackingCV: 0.569583277444
+/home/ubuntu/anaconda2/lib/python2.7/site-packages/sklearn/cross_validation.py:44: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
+  "This module will be removed in 0.20.", DeprecationWarning)
+/home/ubuntu/anaconda2/lib/python2.7/site-packages/sklearn/grid_search.py:43: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. This module will be removed in 0.20.
+  DeprecationWarning)
+load datas...
+submit test size: 1.0
+<model_stack.model_wrapper.XgbWrapper object at 0x7f960f7a1590>-1stCV: 0.558429989616
+<model_stack.model_wrapper.XgbWrapper object at 0x7f960f77dfd0>-1stCV: 0.571217322869
+<model_stack.model_wrapper.XgbWrapper object at 0x7f9608c54990>-1stCV: 0.57064316042
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f9608c54d90>-1stCV: 0.582228036341
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f9608c54bd0>-1stCV: 0.579647412732
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f9608c54b90>-1stCV: 0.563526286492
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f9608c54ad0>-1stCV: 0.554530750174
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f9608c54a10>-1stCV: 0.563007045375
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f9608c54910>-1stCV: 0.553279602896
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f9608c547d0>-1stCV: 0.559662704526
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f9608c54750>-1stCV: 0.548162807795
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f9608c546d0>-1stCV: 0.570055627362
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f9608c54650>-1stCV: 0.583090376318
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f9608c545d0>-1stCV: 0.569782410761
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f9608c54550>-1stCV: 0.582875262157
+<model_stack.model_wrapper.XgbWrapper object at 0x7f9608c54c10>-2ndCV: 0.57014632985
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f9608c544d0>-2ndCV: 0.580272673608
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f9608c54410>-2ndCV: 0.574214453065
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f9608c54350>-2ndCV: 0.580903994265
+<model_stack.model_wrapper.SklearnWrapper object at 0x7f9608c542d0>-2ndCV: 0.581695000887
+Traceback (most recent call last):
+  File "model_stacking_three_layer.py", line 243, in <module>
+    predicts, score= model_stack.run_stack_predict()
+  File "/home/ubuntu/nbs/MercedesBenz/ML/model/model_stack/model_stack.py", line 186, in run_stack_predict
+    print("score={}".formet(score))
+AttributeError: 'str' object has no attribute 'formet'
