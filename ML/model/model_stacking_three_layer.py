@@ -131,9 +131,10 @@ knr_params4 = {'n_neighbors' : 25}
 
 SEED = 0
 
-level_1_models = [XgbWrapper(seed=SEED, params=xgb_params1), XgbWrapper(seed=SEED, params=xgb_params2),
+level_1_models = [XgbWrapper(seed=SEED, params=xgb_params1, cv_fold=4), 
+                  XgbWrapper(seed=SEED, params=xgb_params2, cv_fold=4),
                   #XgbWrapper(seed=SEED, params=xgb_params3),
-                  XgbWrapper(seed=SEED, params=xgb_params4) 
+                  XgbWrapper(seed=SEED, params=xgb_params4, cv_fold=4) 
                  ]
                 
 # level_1_models = level_1_models + [SklearnWrapper(clf=KNeighborsRegressor,  params=knr_params1),
@@ -201,7 +202,7 @@ ls_params = {
     'alpha': .01#0.005
 }
 
-xg = XgbWrapper(seed=SEED, params=xgb_params)
+xg = XgbWrapper(seed=SEED, params=xgb_params, cv_fold=4)
 et = SklearnWrapper(clf=ExtraTreesRegressor, seed=SEED, params=et_params)
 rf = SklearnWrapper(clf=RandomForestRegressor, seed=SEED, params=rf_params)
 rd = SklearnWrapper(clf=Ridge, seed=SEED, params=rd_params)
@@ -230,7 +231,7 @@ level_2_models = [xg, et, rf, rd, ls,
 #     'silent': 1
 # }
 
-stacking_model = XgbWrapper(seed=SEED, params=xgb_params)
+stacking_model = XgbWrapper(seed=SEED, params=xgb_params, , cv_fold=5)
 #stacking_model = GridCVWrapper(Ridge, seed=SEED, cv_fold=5, params={}, scoring=scoring, param_grid = {
 #            'alpha': [1e-3,5e-3,1e-2,5e-2,1e-1,0.2,0.3,0.4,0.5,0.8,1e0,3,5,7,1e1]})
 

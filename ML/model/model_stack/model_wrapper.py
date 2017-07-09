@@ -56,14 +56,15 @@ class SklearnWrapper(BaseWrapper):
 
 
 class XgbWrapper(BaseWrapper):
-    def __init__(self, seed=0, params={}):
+    def __init__(self, seed=0, params={}, cv_fold=5):
         self.param = params
         self.param['seed'] = seed
         self.nrounds = params.pop('nrounds', 250)
         self.score = 0
+        self.cv_fold = cv_fold
 
     def train(self, x, y):
-        best_nrounds, cv_mean, cv_std = self.cv_train(x, y)
+        best_nrounds, cv_mean, cv_std = self.cv_train(x, y, nfold=self.cv_fold)
         self.nrounds = best_nrounds
         #print('Ensemble-CV: {0}+{1}'.format(cv_mean, cv_std))
         dtrain = xgb.DMatrix(x, label=y)
