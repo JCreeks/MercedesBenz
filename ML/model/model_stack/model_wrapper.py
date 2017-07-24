@@ -8,7 +8,7 @@
 import os
 import sys
 import numpy as np
-
+import matplotlib.pyplot as plt
 module_path = os.path.abspath(os.path.join('..'))
 sys.path.append(module_path)
 
@@ -64,12 +64,15 @@ class XgbWrapper(BaseWrapper):
         self.score = 0
         self.cv_fold = cv_fold
 
-    def train(self, x, y):
+    def train(self, x, y, plotImp=False):
         best_nrounds, cv_mean, cv_std = self.cv_train(x, y, nfold=self.cv_fold)
         self.nrounds = best_nrounds
         #print('Ensemble-CV: {0}+{1}'.format(cv_mean, cv_std))
         dtrain = xgb.DMatrix(x, label=y)
         self.gbdt = xgb.train(self.param, dtrain, self.nrounds)
+        if (plotImp):
+            fig, ax = plt.subplots(1, 1, figsize=(8, 13))
+            xgb.plot_importance(self.gbdt, max_num_features=50, height=0.5, ax=ax)
 
     def cv_train(self, x, y, num_boost_round=1000, nfold=5, early_stopping_rounds=40):
         dtrain = xgb.DMatrix(x, label=y)
